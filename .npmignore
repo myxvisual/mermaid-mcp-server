@@ -1,0 +1,44 @@
+# Files and directories to always ignore from the package
+
+# Source code directory
+# These are typically not needed in the published package if "files" in package.json points to a build directory.
+# However, it's good practice to list them as a fallback.
+src/
+
+# TypeScript configuration files
+tsconfig.json
+*.tsbuildinfo
+
+# Log files
+*.log
+
+# Environment files
+.env*
+
+# Test directories and files (if any)
+test/
+tests/
+__tests__/
+*.test.*
+*.spec.*
+*.e2e.*
+
+# IDE/editor specific directories
+.vscode/
+.idea/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Node modules at the project root (npm ignores this by default, but explicit is good)
+/node_modules/
+
+# Lockfiles (npm ignores package-lock.json by default when "files" is present and it's not explicitly included, but explicit is good)
+/package-lock.json
+/yarn.lock
+/pnpm-lock.yaml
+
+# Git specific files (npm ignores .git by default)
+.git/
+.gitignore
