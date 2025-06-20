@@ -2,7 +2,7 @@
 
 A simple and robust MCP server providing live information about Mermaid.js diagrams.
 
-This is a TypeScript-based [Model Context Protocol (MCP)](https://github.com/microsoft/vscode-languageserver-node/blob/main/protocol/src/common/protocol.mcp.ts) server that provides access to Mermaid diagram information. It exposes a set of tools to discover and retrieve details about the various diagram types supported by Mermaid.
+This is a TypeScript-based [MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) server that provides access to Mermaid diagram information. It exposes a set of tools to discover and retrieve details about the various diagram types supported by Mermaid.
 
 ## 🚀 How It Works
 
@@ -35,6 +35,22 @@ mindmap
       ::icon(fa fa-code)
       TypeScript
       Node.js
+```
+
+## 📦 Configuring with Claude
+To use an MCP server with Claude, add it to your configuration:
+```json
+{
+    "mcpServers": {
+        "mermaid-mcp-server": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "mermaid-mcp-server",
+            ]
+        }
+    }
+}
 ```
 
 ## 🛠️ Tools
