@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-export function about() {
+export function readme() {
     return (
         `Mermaid is a JavaScript-based diagramming and charting tool that uses Markdown-inspired text definitions and a renderer to create and modify complex diagrams. The main purpose of Mermaid is to help documentation catch up with development.
 
@@ -41,12 +41,7 @@ export function listDiagrams() {
         { type: 'radar', name: 'Radar', example: '/syntax/radar', description: "A radar diagram (also known as spider chart or star chart) is a graphical method of displaying multivariate data in the form of a two-dimensional chart of three or more quantitative variables represented on axes starting from the same point." },
     ];
 
-    return items.map((item) => {
-        return {
-            ...item,
-            note: `More Details about ${item?.name}, see examples below.`,
-        };
-    });
+    return items;
 }
 
 export function getDiagram(type: string) {
@@ -65,4 +60,8 @@ export function getDiagramExamples(type: string) {
     const examples = fs.readFileSync(path.join(process.cwd(), `./${diagram.example}.md`), 'utf-8');
 
     return examples ?? '';
+}
+
+export function getDiagramTypes() {
+    return listDiagrams().map((d) => d.type);
 }

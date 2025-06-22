@@ -79,12 +79,7 @@ To get started with development, follow these steps:
     npm install
     ```
 
-3.  **Run the server in development mode:**
-    ```bash
-    npm run dev
-    ```
-
-4.  **Build for production:**
+3.  **Build for production:**
     ```bash
     npm run build
     ```
