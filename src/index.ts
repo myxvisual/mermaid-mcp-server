@@ -8,7 +8,7 @@ const server = new McpServer(
   {
     name: "mermaid-mcp-server",
     title: "Mermaid diagram MCP server",
-    version: "1.0.7",
+    version: "1.0.8",
   },
 );
 

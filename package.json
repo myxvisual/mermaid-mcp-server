@@ -1,6 +1,6 @@
 {
   "name": "mermaid-mcp-server",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Mermaid diagram MCP server",
   "private": false,
   "type": "module",

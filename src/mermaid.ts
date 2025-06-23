@@ -1,6 +1,11 @@
 import fs from 'fs';
 import path from 'path';
 
+export function gerDirname() {
+    // __dirname is not available in ES modules, so we use import.meta.url
+    return path.dirname(new URL(import.meta.url).pathname);
+}
+
 export function readme() {
     return (
         `Mermaid is a JavaScript-based diagramming and charting tool that uses Markdown-inspired text definitions and a renderer to create and modify complex diagrams. The main purpose of Mermaid is to help documentation catch up with development.
@@ -57,7 +62,7 @@ export function getDiagramExamples(type: string) {
         return '';
     }
 
-    const examples = fs.readFileSync(path.join(process.cwd(), `./${diagram.example}.md`), 'utf-8');
+    const examples = fs.readFileSync(path.join(gerDirname(), `../${diagram.example}.md`), 'utf-8');
 
     return examples ?? '';
 }
